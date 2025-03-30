@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card-container {
+    @apply relative w-full h-full transition-all duration-300 ease-in-out transform-gpu perspective-1000;
+  }
+  
+  .card {
+    @apply relative w-full h-full transition-all duration-300 transform-gpu style-preserve-3d rounded-xl shadow-lg;
+  }
+  
+  .card-face {
+    @apply absolute w-full h-full backface-hidden rounded-xl overflow-hidden;
+  }
+  
+  .card-back {
+    @apply transform-gpu rotate-y-180;
+  }
+  
+  .flipped {
+    @apply rotate-y-180;
+  }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+} 
